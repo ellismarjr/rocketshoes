@@ -59,7 +59,7 @@ export default function Cart() {
         <button type="button">Finalizar pedido</button>
         <Total>
           <span>TOTAL</span>
-          <strong>R$1920,28</strong>
+          <strong>R$129,90</strong>
         </Total>
       </footer>
     </Container>
