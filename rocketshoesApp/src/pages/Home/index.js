@@ -16,6 +16,7 @@ import {
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import api from '../../services/api';
+import { formatPrice } from '../../util/format';
 
 export default class Home extends React.Component {
   state = {
@@ -31,8 +32,8 @@ export default class Home extends React.Component {
 
     const data = response.data.map(product => ({
       ...product,
+      priceFormatted: formatPrice(product.price),
     }));
-    console.tron.log(data);
 
     this.setState({ products: data });
   };
@@ -48,7 +49,7 @@ export default class Home extends React.Component {
           }}
         />
         <ProductTitle>{item.title}</ProductTitle>
-        <ProductPrice>{item.price}</ProductPrice>
+        <ProductPrice>{formatPrice(item.price)}</ProductPrice>
         <AddButton>
           <ProductAmount>
             <Icon name="add-shopping-cart" color="#FFF" size={20} />
